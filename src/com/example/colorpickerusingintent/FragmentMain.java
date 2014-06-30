@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class FragmentMain extends Fragment {
-	private final int requestCode = 200; 
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,7 +26,7 @@ public class FragmentMain extends Fragment {
 		colorBtn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	Log.i("button_clicked","Color 1 button clicked.");
-            	getColor();
+            	getColor1();
             }
         });
 		
@@ -35,12 +34,18 @@ public class FragmentMain extends Fragment {
 		colorBtn2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	Log.i("button_clicked","Color 2 button clicked.");
+            	getColor2();
             }
         });
 	}
 	
-	private void getColor() {
+	private void getColor1() {
 		Intent intent = new Intent("msud.cs390H.ACTION_COLOR");
-		getActivity().startActivityForResult(intent, requestCode);
+		getActivity().startActivityForResult(intent, 100);
+	}
+	
+	private void getColor2() {
+		Intent intent = new Intent("msud.cs390H.ACTION_COLOR");
+		getActivity().startActivityForResult(intent, 200);
 	}
 }

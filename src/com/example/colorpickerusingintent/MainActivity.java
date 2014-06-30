@@ -40,10 +40,17 @@ public class MainActivity extends Activity {
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	    if (requestCode == 200) {
+	    if (requestCode == 100) {
 	        if (resultCode == RESULT_OK) {
 	        	int[] colors = data.getIntArrayExtra("colorArray");
 	        	setColor1(colors);
+	        	Log.i("onActivityResult", Integer.toString(colors.length));
+	        }
+	    }
+	    if (requestCode == 200) {
+	        if (resultCode == RESULT_OK) {
+	        	int[] colors = data.getIntArrayExtra("colorArray");
+	        	setColor2(colors);
 	        	Log.i("onActivityResult", Integer.toString(colors.length));
 	        }
 	    }
@@ -51,6 +58,11 @@ public class MainActivity extends Activity {
 	
 	private void setColor1(int[] colors) {
 		FrameLayout fl = (FrameLayout) findViewById(R.id.colorFrame1);
+		fl.setBackgroundColor(Color.rgb(colors[0], colors[1], colors[2]));
+	}
+	
+	private void setColor2(int[] colors) {
+		FrameLayout fl = (FrameLayout) findViewById(R.id.colorFrame2);
 		fl.setBackgroundColor(Color.rgb(colors[0], colors[1], colors[2]));
 	}
 
