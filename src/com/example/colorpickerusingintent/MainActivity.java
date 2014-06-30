@@ -38,8 +38,8 @@ public class MainActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	    if (requestCode == 200) {
 	        if (resultCode == RESULT_OK) {
-	        	String result = data.getStringExtra("result");
-	        	Log.i("onActivityResult", result);
+	        	int[] colors = data.getIntArrayExtra("colorArray");
+	        	Log.i("onActivityResult", Integer.toString(colors.length));
 	        }
 	    }
 	}

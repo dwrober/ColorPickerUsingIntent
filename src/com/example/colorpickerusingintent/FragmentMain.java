@@ -41,12 +41,7 @@ public class FragmentMain extends Fragment {
 	
 	private void getColor() {
 		Intent intent = new Intent("msud.cs390H.ACTION_COLOR");
-//		Bundle colorInfo = new Bundle();
-//		colorInfo.putInt("red", red);
-//		colorInfo.putInt("green", green);
-//		colorInfo.putInt("blue", blue);
-//		intent.putExtras(colorInfo);
-		getActivity().startActivityForResult(intent, requestCode); // or startActivityForResult(intent, requestCode);
+		getActivity().startActivityForResult(intent, requestCode);
 	}
 	
 	
