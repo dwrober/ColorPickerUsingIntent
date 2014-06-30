@@ -31,11 +31,13 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onStart() {
 		super.onStart();
-		fm = new FragmentMain();
-		FragmentManager fragmentManager= getFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-		fragmentTransaction.add(R.id.container, fm);
-		fragmentTransaction.commit();
+		if(fm==null) {
+			fm = new FragmentMain();
+			FragmentManager fragmentManager= getFragmentManager();
+			FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+			fragmentTransaction.add(R.id.container, fm);
+			fragmentTransaction.commit();	
+		}
 	}
 	
 	@Override
