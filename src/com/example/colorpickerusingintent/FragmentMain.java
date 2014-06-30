@@ -43,6 +43,4 @@ public class FragmentMain extends Fragment {
 		Intent intent = new Intent("msud.cs390H.ACTION_COLOR");
 		getActivity().startActivityForResult(intent, requestCode);
 	}
-	
-	
 }
