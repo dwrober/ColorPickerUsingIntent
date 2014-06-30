@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class FragmentMain extends Fragment {
+	private final int requestCode = 200; 
+	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
         Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class FragmentMain extends Fragment {
 //		colorInfo.putInt("green", green);
 //		colorInfo.putInt("blue", blue);
 //		intent.putExtras(colorInfo);
-		startActivity(intent); // or startActivityForResult(intent, requestCode);
+		getActivity().startActivityForResult(intent, requestCode); // or startActivityForResult(intent, requestCode);
 	}
 	
 	
