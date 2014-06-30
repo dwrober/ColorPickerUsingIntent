@@ -1,6 +1,7 @@
 package com.example.colorpickerusingintent;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,6 +25,7 @@ public class FragmentMain extends Fragment {
 		colorBtn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	Log.i("button_clicked","Color 1 button clicked.");
+            	getColor();
             }
         });
 		
@@ -34,4 +36,16 @@ public class FragmentMain extends Fragment {
             }
         });
 	}
+	
+	private void getColor() {
+		Intent intent = new Intent("msud.cs390H.ACTION_COLOR");
+//		Bundle colorInfo = new Bundle();
+//		colorInfo.putInt("red", red);
+//		colorInfo.putInt("green", green);
+//		colorInfo.putInt("blue", blue);
+//		intent.putExtras(colorInfo);
+		startActivity(intent); // or startActivityForResult(intent, requestCode);
+	}
+	
+	
 }
